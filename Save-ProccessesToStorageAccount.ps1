@@ -2,6 +2,7 @@
 
 $outputFileName = "RunningProcesses.txt"
 $storageAccountName = "privlabseundevsta"
+$resourceGroupName = "AzLabsBicepPrivate"
 $containerName = "processes"
 $blobName = "RunningProcesses.txt"
 
@@ -16,7 +17,7 @@ Write-Output "Connecting to Azure..."
 Connect-AzAccount -Identity
 
 Write-Output "Getting Storage Account..."
-$storageAccount = Get-AzStorageAccount -Name $storageAccountName
+$storageAccount = Get-AzStorageAccount -Name $storageAccountName -ResourceGroupName $resourceGroupName
 $context = $storageAccount.Context
 
 Write-Output "Uploading file to Azure Storage Account..."
