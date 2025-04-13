@@ -2,7 +2,6 @@
 
 $outputFileName = "RunningProcesses.txt"
 $storageAccountName = "privlabseundevsta"
-$resourceGroupName = "AzLabsBicepPrivate"
 $containerName = "processes"
 $blobName = "RunningProcesses.txt"
 
