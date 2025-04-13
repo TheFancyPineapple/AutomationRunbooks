@@ -17,8 +17,7 @@ Write-Output "Connecting to Azure..."
 Connect-AzAccount -Identity
 
 Write-Output "Getting Storage Account..."
-$storageAccount = Get-AzStorageAccount -Name $storageAccountName -ResourceGroupName $resourceGroupName
-$context = $storageAccount.Context
+$context = New-AzStorageContext -StorageAccountName $storageAccountName -UseConnectedAccount
 
 Write-Output "Uploading file to Azure Storage Account..."
 Set-AzStorageBlobContent -File $outputFileName -Container $containerName -Blob $blobName -Context $context
